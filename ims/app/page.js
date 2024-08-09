@@ -208,8 +208,7 @@ export default function Home() {
               type="button"
               variant="contained"
               sx={{
-                mt: 3,
-                mb: 2,
+                mt: 5,
                 background: "#A91D3A",
                 color: "black",
                 borderRadius: "10px",

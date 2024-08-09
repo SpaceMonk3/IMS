@@ -74,14 +74,16 @@ export default function Home() {
 
             <Button
               type="button"
-              variant="contained"
+              variant="text"
               sx={{
                 mt: 3,
                 mb: 2,
                 ml: 2,
+                fontWeight: "bold",
                 color: "secondary.main",
                 bgcolor: "transparent",
                 borderRadius: "10px",
+                border: "none",
                 "&:hover": {
                   background: "#0d0d0d",
                 },
@@ -92,27 +94,48 @@ export default function Home() {
               Pricing
             </Button>
 
-
             <Button
               type="button"
-              variant="contained"
+              variant="text"
               sx={{
                 mt: 3,
                 mb: 2,
-                mr: 3,
-                color: "white",
+                ml: 2,
+                fontWeight: "bold",
+                color: "secondary.main",
                 bgcolor: "transparent",
                 borderRadius: "10px",
+                border: "none",
+                "&:hover": {
+                  background: "#0d0d0d",
+                },
+              }}
+              whileHover={{ scale: 1 }}
+            >
+              Features
+            </Button>
+
+            <Button
+              type="button"
+              variant="text"
+              sx={{
+                mt: 3,
+                mb: 2,
+                ml: "auto",
+                mr: 3,
+                fontWeight: "bold",
+                color: "black",
+                bgcolor: "transparent",
+                borderRadius: "10px",
+                border: "none",
                 // "&:hover": {
-                //   background: "#0d0d0d",
+                //   background: "#b0304a",
                 // },
               }}
               whileHover={{ scale: 1 }}
             >
               Login
             </Button>
-
-
           </Box>
 
           <Box
@@ -124,7 +147,7 @@ export default function Home() {
               alignItems: "center",
               justifyContent: "center",
               bgcolor: "primary.main",
-              background: "linear-gradient(135deg, #000000 50%, #A91D3A 100%)",
+              background: "linear-gradient(45deg, #000000 50%, #A91D3A 100%)",
             }}
           >
             <Typography
@@ -142,7 +165,7 @@ export default function Home() {
                 //   bgcolor: "secondary.main", // Use theme color
                 //   color: "primary.main", // Use theme color
                 // },
-                background: "linear-gradient(125deg, #A91D3A 50%, #000000 65%)", // Define your gradient colors
+                background: "linear-gradient(42deg, #A91D3A 49%, #000000 54%)", // Define your gradient colors
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text", // This is for non-webkit browsers (not widely supported yet)
@@ -162,7 +185,7 @@ export default function Home() {
                 width: "fit-content",
                 py: 2,
                 px: 6,
-                color: "secondary.main", // Use theme color
+                color: "lightslategray", // Use theme color
                 //color: "primary.main", // Use theme color
                 // borderRadius: "10px",
                 // boxShadow: "0 0 10px rgba(50, 50, 50, 1)",
@@ -188,7 +211,7 @@ export default function Home() {
                 mt: 3,
                 mb: 2,
                 background: "#A91D3A",
-                color: "#EEEEEE",
+                color: "black",
                 borderRadius: "10px",
                 "&:hover": {
                   background: "#C73659",

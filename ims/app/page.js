@@ -72,7 +72,47 @@ export default function Home() {
               Pantrack
             </Typography>
 
-            
+            <Button
+              type="button"
+              variant="contained"
+              sx={{
+                mt: 3,
+                mb: 2,
+                ml: 2,
+                color: "secondary.main",
+                bgcolor: "transparent",
+                borderRadius: "10px",
+                "&:hover": {
+                  background: "#0d0d0d",
+                },
+              }}
+              whileHover={{ scale: 1 }}
+              
+            >
+              Pricing
+            </Button>
+
+
+            <Button
+              type="button"
+              variant="contained"
+              sx={{
+                mt: 3,
+                mb: 2,
+                mr: 3,
+                color: "white",
+                bgcolor: "transparent",
+                borderRadius: "10px",
+                // "&:hover": {
+                //   background: "#0d0d0d",
+                // },
+              }}
+              whileHover={{ scale: 1 }}
+            >
+              Login
+            </Button>
+
+
           </Box>
 
           <Box
@@ -92,16 +132,21 @@ export default function Home() {
                 width: "fit-content",
                 py: 2,
                 px: 6,
-                color: "secondary.main", // Use theme color
+                //color: "secondary.main", // Use theme color
                 //color: "primary.main", // Use theme color
                 // borderRadius: "10px",
                 // boxShadow: "0 0 10px rgba(50, 50, 50, 1)",
                 fontSize: "4rem",
-                mb: "2"
+                mb: "2",
                 // ':hover': {
                 //   bgcolor: "secondary.main", // Use theme color
                 //   color: "primary.main", // Use theme color
                 // },
+                background: "linear-gradient(125deg, #A91D3A 50%, #000000 65%)", // Define your gradient colors
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text", // This is for non-webkit browsers (not widely supported yet)
+                textFillColor: "transparent",
               }}
               component={motion.div}
               initial={{ opacity: 0, y: 70 }}

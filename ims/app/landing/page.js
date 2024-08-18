@@ -137,28 +137,30 @@ export default function Landing() {
                 >
                   Features
                 </Button>
-
-                <Button
-                  type="button"
-                  variant="text"
-                  sx={{
-                    mt: 3,
-                    mb: 2,
-                    ml: "auto",
-                    mr: 3,
-                    fontWeight: "bold",
-                    color: "black",
-                    bgcolor: "transparent",
-                    borderRadius: "10px",
-                    border: "none",
-                    // "&:hover": {
-                    //   background: "#b0304a",
-                    // },
-                  }}
-                  whileHover={{ scale: 1 }}
-                >
-                  <SignInButton/>
-                </Button>
+                
+                <SignInButton>
+                  <Button
+                    type="button"
+                    variant="text"
+                    sx={{
+                        mt: 3,
+                        mb: 2,
+                        ml: "auto",
+                        mr: 3,
+                        fontWeight: "bold",
+                        color: "black",
+                        bgcolor: "transparent",
+                        borderRadius: "10px",
+                        border: "none",
+                        // "&:hover": {
+                        //   background: "#b0304a",
+                        // },
+                    }}
+                    whileHover={{ scale: 1 }}
+                  >
+                    Log In
+                  </Button>
+                </SignInButton>
               </Box>
 
               <Box

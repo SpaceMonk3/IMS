@@ -17,9 +17,8 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import TableContainer from '@mui/material/TableContainer';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Paper from '@mui/material/Paper';
+import { styled } from '@mui/system';
 
 const style = {
   position: 'absolute',
@@ -36,7 +35,25 @@ const style = {
   gap: 3,
 }
 
-export default function ItemsList() {
+const CustomTextField = styled(TextField)({
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'gray',
+      },
+      '&:hover fieldset': {
+        borderColor: 'gray',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'black',
+      },
+      //backgroundColor: 'gray',
+      '& .MuiInputBase-input': {
+        color: 'black', // Set the input text color to black
+      },
+    },
+});
+
+export default function AddItem() {
     // We'll add our component logic here
     const [inventory, setInventory] = useState([])
     const [open, setOpen] = useState(false)
@@ -170,36 +187,55 @@ export default function ItemsList() {
             </Box>
           </Box> */}
 
-            <TableContainer component={Paper} sx={{ maxHeight: 240 }}>
-                <Table size="small" stickyHeader aria-label="sticky table">
-                    <TableHead>
-                    <TableRow>
-                        <TableCell>Name</TableCell>
-                        <TableCell>Price</TableCell>
-                        <TableCell>Quantity</TableCell>
-                        <TableCell>Payment Method</TableCell>
-                        <TableCell>Sale Amount</TableCell>
-                        <TableCell></TableCell>
-                    </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    {inventory.map(({name, quantity}) => (
-                        <TableRow key={'1'}>
-                        <TableCell>{name.charAt(0).toUpperCase() + name.slice(1)}</TableCell>
-                        <TableCell>{'$9.99'}</TableCell>
-                        <TableCell>{quantity}</TableCell>
-                        <TableCell>{'Credit Card'}</TableCell>
-                        <TableCell>{`$100`}</TableCell>
-                        <TableCell>
-                            <Button variant="contained" onClick={() => removeItem(name)}>
-                                <DeleteIcon />
-                            </Button>
-                        </TableCell>
-                        </TableRow>
-                    ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography 
+                    id="modal-modal-title" 
+                    variant="h6" 
+                    component="h2"
+                    sx={{
+                        color: "black"
+                    }}
+                >
+                  Add Item
+                </Typography>
+                <Stack width="100%" direction={'row'} spacing={2}>
+                <CustomTextField
+                    id="outlined-basic"
+                    label="Item"
+                    variant="outlined"
+                    fullWidth
+                    value={itemName}
+                    onChange={(e) => setItemName(e.target.value)}
+                    sx={{
+                        color: 'black',
+                    }}
+                />
+                  <Button
+                    variant="outlined"
+                    onClick={() => {
+                      addItem(itemName)
+                      setItemName('')
+                      handleClose()
+                    }}
+                    sx={{
+                        color: "black"
+                    }}
+                  >
+                    Add
+                  </Button>
+                </Stack>
+              </Box>
+            </Modal>
+            <Button variant="contained" onClick={handleOpen}>
+              Add New Item
+            </Button>
         </SignedIn>
     )
 }

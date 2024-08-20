@@ -37,6 +37,7 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import ItemsList from '../components/itemsList';
+import AddItem from '../components/addItem';
 
 const drawerWidth = 240;
 
@@ -233,6 +234,7 @@ export default function Dashboard() {
                       flexDirection: 'column',
                       height: 240,
                       borderRadius: "10px",
+                      overflow: 'auto',
                     }}
                   >
                     <ItemsList/>
@@ -249,7 +251,7 @@ export default function Dashboard() {
                       borderRadius: "10px",
                     }}
                   >
-                    
+                    <AddItem />
                   </Paper>
                 </Grid>
                 {/* Recent Orders */}
@@ -260,6 +262,7 @@ export default function Dashboard() {
                       display: 'flex', 
                       flexDirection: 'column',
                       borderRadius: "10px", 
+                      height: 240,
                     }}
                   >
                     
